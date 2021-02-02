@@ -1,12 +1,15 @@
 # EO4Wildfire Project
-## 1. Colab: https://colab.research.google.com/
-## 2. Load Google Drive
-## 3. Clone this project using the following
 
+Please follow this notebook tutorial (Google Drive + colab): <br>
+
+[eo4wildfire_on_the_fly.ipynb](https://colab.research.google.com/drive/1-XxcVGYCFDXUsJEPlnuJTeLNnP1OHHWW?usp=sharing)
+
+
+Or clone this folder to local machine:
 ```
 !git clone https://github.com/puzhao89/eo4wildfire.git
 ```
-
+## Data Structure
 +++ Data ([Google Drive](https://drive.google.com/drive/folders/1RkCycJrmKSOlbK10LdY-B07Z6Hf2gehT?usp=sharing))<br>
 ------ Historical_Wildfire_Dataset (For offline model training) <br>
 ---------- BC_SAR4Wildfire_Dataset <br>
