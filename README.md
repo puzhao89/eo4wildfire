@@ -2,14 +2,13 @@
 
 Please follow this notebook tutorial (Google Drive + colab): <br>
 
-[main_eo4wildfire.ipynb](https://colab.research.google.com/drive/1-XxcVGYCFDXUsJEPlnuJTeLNnP1OHHWW?usp=sharing)
+[main_eo4wildfire_4_colab.ipynb](https://colab.research.google.com/drive/1-XxcVGYCFDXUsJEPlnuJTeLNnP1OHHWW?usp=sharing)
 
 
 Or clone this project to your local machine:
 ```
 git clone https://github.com/puzhao89/eo4wildfire.git
 ```
-## Project Structure
 ## **eo4wildire** <br>
 ++| Data ([Google Drive](https://drive.google.com/drive/folders/1RkCycJrmKSOlbK10LdY-B07Z6Hf2gehT?usp=sharing))<br>
 ------| Historical_Wildfire_Dataset (For offline model training) <br>
@@ -23,4 +22,4 @@ git clone https://github.com/puzhao89/eo4wildfire.git
 ++| evaluation/ <br>
 ++| models/ <br>
 ++| preprocessing/ <br>
-++| main_eo4wildfire.ipynb <br>
+++| main_eo4wildfire_4_colab.ipynb <br>
