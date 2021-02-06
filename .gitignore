@@ -2,11 +2,11 @@ Sampled_Patches/
 Experiments/
 Experiments_TV/
 outputs/
-Data/
+# Data/*
 *.pyc
 # Data/Historical_Wildfire_Dataset/*
 # Data/Temporal_Progressions_Data/*
-# !Data/.gitkeep
-# !Data/Historical_Wildfire_Dataset/.gitkeep
-# !Data/Temporal_Progressions_Data/.gitkeep
+!Data/.gitkeep
+!Data/Historical_Wildfire_Dataset/.gitkeep
+!Data/Temporal_Progressions_Data/.gitkeep
 .ipynb_checkpoints/
