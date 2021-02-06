@@ -1,7 +1,8 @@
 Sampled_Patches/
 Experiments/
 Experiments_TV/
-outputs/
+outputs/*
+!outputs/.gitkeep
 # Data/*
 *.png
 *.pyc
