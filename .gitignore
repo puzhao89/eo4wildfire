@@ -3,6 +3,7 @@ Experiments/
 Experiments_TV/
 outputs/
 # Data/*
+*.png
 *.pyc
 Data/Historical_Wildfire_Dataset/*
 Data/Temporal_Progressions_Data/*
