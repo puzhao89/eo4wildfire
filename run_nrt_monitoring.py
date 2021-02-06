@@ -21,7 +21,7 @@ def main():
 
         # sampling config
         patchsize = 256,
-        num_patch_per_image = 10, #500
+        num_patch_per_image = 500, #500
         train_val_split_rate = 0.7,
         random_state = 42,
 
@@ -30,11 +30,11 @@ def main():
         ENCODER = 'resnet50', # 'mobilenet_v2'
         learning_rate = 1e-5,
         weight_decay = 1e-4,
-        BATCH_SIZE = 4, #32,
+        BATCH_SIZE = 32, #32,
 
         max_score = 0, # IoU
         max_epoch = 3,
-        size_of_train = 64, #3072,
+        size_of_train = 3072, #3072,
 
         # loss
         gamma = 1, # dice
@@ -58,7 +58,7 @@ def main():
     data_sampler()
     cfg.data_sampler = data_sampler
 
-    for ref_mode in ['SARREF']:  #'SARREF', 'OptSAR', 'OptREF'
+    for ref_mode in ['SARREF', 'OptSAR']:  #'SARREF', 'OptSAR', 'OptREF'
         cfg.ref_mode = ref_mode
 
         pprint(cfg)

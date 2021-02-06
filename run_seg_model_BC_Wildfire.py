@@ -21,7 +21,7 @@ def main():
 
         # sampling config
         patchsize = 256,
-        num_patch_per_image = 10, #500
+        num_patch_per_image = 500, #500
         train_val_split_rate = 0.7,
         random_state = 42,
 
@@ -30,11 +30,11 @@ def main():
         ENCODER = 'resnet50', # 'mobilenet_v2'
         learning_rate = 1e-5,
         weight_decay = 1e-4,
-        BATCH_SIZE = 4, # 32
+        BATCH_SIZE = 32, # 32
 
         max_score = 0.1, # If IoU > max_score, start to save model
         max_epoch = 2, # max iteration
-        size_of_train = 256, #3072, # size of data for training
+        size_of_train = 3072, #3072, # size of data for training
 
         # loss
         gamma = 1, # dice
