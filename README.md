@@ -10,7 +10,7 @@ Or clone this project to your local machine:
 ```
 git clone https://github.com/puzhao89/eo4wildfire.git
 ```
-## **eo4wildire** <br>
+## **eo4wildfire** <br>
 ++| Data ([Google Drive](https://drive.google.com/drive/folders/163ujMrEMBTIsv-OcbvzTXq_GI_EZ24FL?usp=sharing))<br>
 ------| Historical_Wildfire_Dataset (For offline model training) <br>
 ----------| BC_SAR4Wildfire_Dataset <br>
