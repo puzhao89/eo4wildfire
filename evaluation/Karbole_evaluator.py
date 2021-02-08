@@ -226,7 +226,7 @@ class Evaluator:
         for fireName in testing_dataset.keys():
             print(f"fireName: {fireName}")
             refName = testing_dataset[fireName][0]
-            ref = imread(self.trainPath / f"A3_Opt_Reference_Masks" / f"{refName}.png") / 255
+            ref = imread(self.trainPath / f"A4_OptGTM" / f"{refName}.png") / 255
 
             url = glob.glob(str(self.trainPath / self.input_folder / f"{fireName}*"))[0]
             dataName = os.path.split(url)[-1][:-4]

@@ -265,7 +265,7 @@ class Evaluator:
             firePath = self.transferPath / f"{fireName}_Progression_Data_20m"
             
             refName = transfer_dataset[fireName][0]
-            ref_url = firePath / "A0_Opt_Ref_Mask" / f"{refName}.png"
+            ref_url = firePath / "A4_OptGTM" / f"{refName}.png"
             if os.path.isfile(ref_url):
                 ref = imread(ref_url) / 255.0
                 print(ref.shape)

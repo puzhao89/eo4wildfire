@@ -33,7 +33,7 @@ def main():
         BATCH_SIZE = 32, # 32
 
         max_score = 0.1, # If IoU > max_score, start to save model
-        max_epoch = 2, # max iteration
+        max_epoch = 30, # max iteration
         size_of_train = 3072, #3072, # size of data for training
 
         # loss

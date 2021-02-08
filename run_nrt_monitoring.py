@@ -32,8 +32,8 @@ def main():
         weight_decay = 1e-4,
         BATCH_SIZE = 32, #32,
 
-        max_score = 0, # IoU
-        max_epoch = 3,
+        max_score = 0.1, # IoU
+        max_epoch = 50,
         size_of_train = 3072, #3072,
 
         # loss
