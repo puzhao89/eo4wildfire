@@ -15,7 +15,7 @@ git clone https://github.com/puzhao89/eo4wildfire.git
 ------| Historical_Wildfire_Dataset (For offline model training) <br>
 ----------| BC_SAR4Wildfire_Dataset <br>
 ----------| Global_SAR4Wildfire_Dataset <br>
-------| Temporal_progression_Data (For on-the-fly and evaluating progression) <br>
+------| Temporal_Progression_Data (For on-the-fly and evaluating progression) <br>
 ----------| BC2018R91947_Progression_Data_20m <br>
 ----------| BC2018R92033_Progression_Data_20m <br>
 ----------| FraserIsland_Progression_Data_20m <br>
