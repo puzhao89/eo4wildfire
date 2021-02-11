@@ -250,14 +250,14 @@ class NRT_DataSampler:
 
             for i in tqdm(range(0, train.shape[0])):
                 imsave(self.train.patchDir / f"{tifName}_{i}.png", (interval_95(train[i,...,:3])*255).astype(np.uint8))
-                imsave(self.train.maskDir_SAR / f"{tifName}_{i}.png", (train[i,...,-3:-2]*255).astype(np.uint8))
-                imsave(self.train.maskDir_optSAR / f"{tifName}_{i}.png", (train[i,...,-2:-1]*255).astype(np.uint8))
+                imsave(self.train.maskDir_SAR / f"{tifName}_{i}.png", (train[i,...,3:4]*255).astype(np.uint8))
+                imsave(self.train.maskDir_optSAR / f"{tifName}_{i}.png", (train[i,..., 4:5]*255).astype(np.uint8))
                 # imsave(self.train.maskDir_Opt / f"{tifName}_{i}.png", (train[i,...,-1:]*255).astype(np.uint8))
 
             for i in tqdm(range(0, val.shape[0])):
                 imsave(self.val.patchDir / f"{tifName}_{i}.png", (interval_95(val[i,...,:3])*255).astype(np.uint8))
-                imsave(self.val.maskDir_SAR / f"{tifName}_{i}.png", (val[i,..., -3:-2]*255).astype(np.uint8))
-                imsave(self.val.maskDir_optSAR / f"{tifName}_{i}.png", (val[i,..., -2:-1]*255).astype(np.uint8))
+                imsave(self.val.maskDir_SAR / f"{tifName}_{i}.png", (val[i,..., 3:4]*255).astype(np.uint8))
+                imsave(self.val.maskDir_optSAR / f"{tifName}_{i}.png", (val[i,..., 4:5]*255).astype(np.uint8))
                 # imsave(self.val.maskDir_Opt / f"{tifName}_{i}.png", (val[i,..., -1:]*255).astype(np.uint8))
 
     def sklearn_uniformSampling_trainValSplit(self, filename):
