@@ -238,11 +238,12 @@ class SegModel:
             refMask = imread(ref_url) / 255
             testName = testing_dataset[fireKey][1]
 
-        logger.info(f"fireKey: {fireKey}\nref_url: {ref_url}\ntestName: {testName}")
+            logger.info(f"fireKey: {fireKey}\nref_url: {ref_url}\ntestName: {testName}")
 
         for dataName in sorted(os.listdir(Path(self.cfg.nrt_data_folder) / self.cfg.input_folder)):
             self.dataName = dataName
             print(f"\n==> {self.dataName}")
+            logger.info(f"dataName: {self.dataName}")
 
             self.dataloaders = self.train_val_loader(num=self.cfg.size_of_train)
     
@@ -274,11 +275,11 @@ class SegModel:
 
             url = Path(self.cfg.nrt_data_folder) / self.cfg.input_folder / self.dataName
             print(f"dataName: {str(url)}")
-            logger.info(f"dataName: {str(url)}")
 
             predMap = self.evaluator.inference(url, self.savePath)
 
-            if (fireKey in testing_dataset.keys()) and (dataName==testName):
+            if (fireKey in testing_dataset.keys()) and (testName in dataName):
+                logger.info("Do Accuracy Assessment ...")
                 self.evaluator.compute_test_accuarcy(predMap, refMask, True, fireKey)
                 self.evaluator.compute_test_accuarcy(predMap, refMask, False, fireKey)
 

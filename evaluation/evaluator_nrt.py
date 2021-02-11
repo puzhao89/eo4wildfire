@@ -17,6 +17,9 @@ from sklearn.metrics import f1_score, cohen_kappa_score, accuracy_score
 from astropy.visualization import PercentileInterval
 interval_95 = PercentileInterval(95.0)
 
+import logging
+logger = logging.getLogger(__name__)
+
 # progression path
 transfer_dataset = {
                 # 'CAL_Creek': ['CAL_Creek_ref_20200928T18_S2', '20200926T01_ASC64'],
@@ -203,14 +206,15 @@ class Evaluator:
         kappa = cohen_kappa_score(ref_vec, pred_vec, labels=np.unique(ref))
         OA = accuracy_score(ref_vec, pred_vec)
 
-        print("\n---------------------------------------")
-        print(f"Precision: {P}")
-        print(f"Recall: {R}")
-        print(f"OA: {OA}")
-        print(f"Kappa: {kappa}")
-        print(f"F1 score: {F1}")
-        print(f"IoU: {IoU}")
-        print("-----------------------------------------")
+        logger.info("\n---------------------------------------")
+        logger.info(f"pntAccFlag: {pntAccFlag}")
+        logger.info(f"Precision: {P}")
+        logger.info(f"Recall: {R}")
+        logger.info(f"OA: {OA}")
+        logger.info(f"Kappa: {kappa}")
+        logger.info(f"F1 score: {F1}")
+        logger.info(f"IoU: {IoU}")
+        logger.info("-----------------------------------------")
 
         Mat = np.array([self.cfg.ARCH, self.cfg.ENCODER, fireName, pntAccFlag, self.cfg.alpha, self.cfg.beta, P, R, OA, kappa, F1, IoU]).reshape(1,-1)
         df = pd.DataFrame(Mat, 
