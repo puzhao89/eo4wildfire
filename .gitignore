@@ -1,7 +1,6 @@
 Sampled_Patches/
 Experiments/
 Experiments_TV/
-outputs/*
 !outputs/.gitkeep
 # Data/*
 outputs/logs/*
