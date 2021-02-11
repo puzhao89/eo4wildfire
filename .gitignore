@@ -4,6 +4,9 @@ Experiments_TV/
 outputs/*
 !outputs/.gitkeep
 # Data/*
+outputs/logs/*
+!outputs/logs/.gitkeep
+*.log
 *.png
 *.pyc
 Data/Historical_Wildfire_Dataset/*

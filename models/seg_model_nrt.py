@@ -32,7 +32,12 @@ from prettyprinter import pprint
 # from datasets.data_provider import Dataset
 from preprocessing.augment import get_training_augmentation, get_validation_augmentation, get_preprocessing
 from datasets.data_visualize import visualize
-from evaluation.evaluator import Evaluator
+
+from evaluation.evaluator_nrt import Evaluator
+from evaluation.evaluator_nrt import testing_dataset
+
+import logging
+logger = logging.getLogger(__name__)
 
 # class import
 f_score = smp.utils.functional.f_score
@@ -218,7 +223,6 @@ class SegModel:
         valid_loader = DataLoader(valid_dataset, batch_size=self.cfg.BATCH_SIZE, shuffle=False, num_workers=8)
 
         dataloaders = {'Train': train_loader, 'Val': valid_loader}
-
         return dataloaders
 
     
@@ -227,6 +231,14 @@ class SegModel:
         self.history_logs = edict()
         self.history_logs['Train'] = []
         self.history_logs['Val'] = []
+
+        fireKey = os.path.split(Path(self.cfg.nrt_data_folder))[-1].split("_")[0]
+        if fireKey in testing_dataset.keys():
+            ref_url = Path(self.cfg.nrt_data_folder)/"A4_OptGTM"/testing_dataset[fireKey][0]
+            refMask = imread(ref_url) / 255
+            testName = testing_dataset[fireKey][1]
+
+        logger.info(f"fireKey: {fireKey}\nref_url: {ref_url}\ntestName: {testName}")
 
         for dataName in sorted(os.listdir(Path(self.cfg.nrt_data_folder) / self.cfg.input_folder)):
             self.dataName = dataName
@@ -261,8 +273,15 @@ class SegModel:
             self.evaluator = Evaluator(self.cfg)
 
             url = Path(self.cfg.nrt_data_folder) / self.cfg.input_folder / self.dataName
-            print(url)
+            print(f"dataName: {str(url)}")
+            logger.info(f"dataName: {str(url)}")
+
             predMap = self.evaluator.inference(url, self.savePath)
+
+            if (fireKey in testing_dataset.keys()) and (dataName==testName):
+                self.evaluator.compute_test_accuarcy(predMap, refMask, True, fireKey)
+                self.evaluator.compute_test_accuarcy(predMap, refMask, False, fireKey)
+
                    
          
     
@@ -409,12 +428,12 @@ class SegModel:
 #     dict(params=model.parameters(), lr=0.0001),
 # ])
 
-def run():
-    torch.multiprocessing.freeze_support()
-    print('loop')
+# def run():
+#     torch.multiprocessing.freeze_support()
+#     print('loop')
 
-if __name__ == '__main__':
-    run()
+# if __name__ == '__main__':
+#     run()
 
 #     from datasets.data_samping import DataSampler
 #     sample_cfg = edict(

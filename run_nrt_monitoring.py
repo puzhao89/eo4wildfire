@@ -6,14 +6,16 @@ from prettyprinter import pprint
 from imageio import imread, imsave
 import os, json
 
+from utils.setup_logs import setup_default_logging
+logger = setup_default_logging("./outputs/logs", string='on-the-fly')
 
-def main():
+def run_by_fireEvent(fireEvent="BC2018R91947"):
 
     project_dir = Path(os.getcwd())
     cfg = edict(
         project_dir = str(project_dir),
         # data_folder = str(project_dir / "BC_Wildfire_Data"),
-        nrt_data_folder = str(project_dir / "Data/Temporal_Progressions_Data/BC2018R91947_Progression_Data_20m"),
+        nrt_data_folder = str(project_dir / f"Data/Temporal_Progressions_Data/{fireEvent}_Progression_Data_20m"),
 
         # PNG
         input_folder = "A0_SAR_RGB", 
@@ -33,7 +35,7 @@ def main():
         BATCH_SIZE = 32, #32,
 
         max_score = 0.1, # IoU
-        max_epoch = 50,
+        max_epoch = 20,
         size_of_train = 3072, #3072,
 
         # loss
@@ -78,13 +80,10 @@ def main():
 
         seg_model.run_nrt_experiment()
 
-        # specify the data_folder for model transfering
-        # cfg.data_folder = Path(os.getcwd()) / "Data"
-        # """ Evaluation """
-        # from evaluation.BC_evaluator import Evaluator
-        # evaluator = Evaluator(cfg)
-        # evaluator.model_testing()
-        # evaluator.model_transfer()
 
 if __name__ == "__main__":
-    main()
+
+    # for fireEvent in ["BC2018R91947", "BC2018R92033", "elephantHill"]:
+    #     run_by_fireEvent(fireEvent)
+
+    run_by_fireEvent("elephantHill")

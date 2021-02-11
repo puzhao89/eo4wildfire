@@ -50,48 +50,49 @@ transfer_dataset = {
 
 # A3_Opt_Reference_Masks
 testing_dataset = {
-                    # 'Sydney': ['Sydney_20191231T00_S2_optRef', '20191227T08_ASC9'],
-                    'elephantHill': ['elephant_20171003T19_S2_optRef', '20170930T01_ASC64'],
-                    # 'Carr': ["Carr_20181030T19_S2_optRef", "Carr_20181109T14_DSC115"],
-                    # 'Chuckegg': ['Chuckegg_20190812T18_L8_optRef', '20190812T01_ASC20'],
-                    # 'Thomas': ['Thomas_20171228T18_S2_optRef', '20171228T01_ASC137'],
+            # 'Sydney': ['Sydney_20191231T00_S2_optRef', '20191227T08_ASC9'],
+            'elephantHill': ['elephant_20171003T19_S2_optRef', '20170930T01_ASC64'],
+            'BC2018R91947': ['R91947_20180918T19_L8_optRef', 'R91947_20180922T02_ASC108'],
+            'BC2018R92033': ['R92033_20180915T19_S2_optRef', 'BC2018R92033_20180824T14_DSC130'],
 
-                    # 'Mendocino': ["Mendocino_20180831T19_S2_optRef", "Mendocino_20180910T14_DSC115"],
-                    # 'Eyik': ["Eyik_20180912T03_S2_optRef", "Eyik_20180914T22_DSC91"],
+            # 'Carr': ["Carr_20181030T19_S2_optRef", "Carr_20181109T14_DSC115"],
+            # 'Chuckegg': ['Chuckegg_20190812T18_L8_optRef', '20190812T01_ASC20'],
+            # 'Thomas': ['Thomas_20171228T18_S2_optRef', '20171228T01_ASC137'],
 
-                    # 'AZ_Bush': ['AZ_Bush_20200628T18_S2_optRef', '20200625T13_DSC27'],
-                    # 'Amazon': ["Amazon_20191116T14_S2_optRef", "Amazon_20191117T09_DSC39"],
-                    # 'Zhigansk': ["Zhigansk_20190827T03_S2_optRef", "Zhigansk_20190913T22_DSC149"],
-                    # 'AU_Nowra': ["AU_Nowra_20191231T00_S2_optRef", "AU_Nowra_20200105T19_DSC147"],
-                    
-                    # 'KolymaRiver': ['KolymaRiver_20200726T01_S2_optRef', '20200721T20_DSC148'],
-                    # 'Morkoka': ["Morkoka_20190913T04_S2_optRef", "Morkoka_20190907T22_DSC62"],
-                    
-                    # BC Wildfires
-                    # 'C10784': ['C10784_20171029T19_S2_optRef', 'C10784_20171001T14_DSC86'],
-                    # 'C10970': ['C10970_20170904T19_S2_optRef', 'C10970_20170907T14_DSC86'],
-                    # 'C50647': ['C50647_20171003T19_S2_optRef', 'C50647_20170918T01_ASC64'],
-                    # 'G80340': ['G80340_20180726T19_S2_optRef', 'G80340_20180621T01_ASC64'],
-                    # 'K20637': ['K20637_20171003T19_S2_optRef', 'K20637_20170930T01_ASC64'],
-                    # 'R92033': ['R92033_20180915T19_S2_optRef', 'R92033_20180824T14_DSC130'],
+            # 'Mendocino': ["Mendocino_20180831T19_S2_optRef", "Mendocino_20180910T14_DSC115"],
+            # 'Eyik': ["Eyik_20180912T03_S2_optRef", "Eyik_20180914T22_DSC91"],
 
-                    'BC2018R91947': ['R91947_20180918T19_L8_optRef', 'R91947_20180922T02_ASC108'],
-                    'BC2018R92033': ['R92033_20180915T19_S2_optRef', 'BC2018R92033_20180824T14_DSC130'],
+            # 'AZ_Bush': ['AZ_Bush_20200628T18_S2_optRef', '20200625T13_DSC27'],
+            # 'Amazon': ["Amazon_20191116T14_S2_optRef", "Amazon_20191117T09_DSC39"],
+            # 'Zhigansk': ["Zhigansk_20190827T03_S2_optRef", "Zhigansk_20190913T22_DSC149"],
+            # 'AU_Nowra': ["AU_Nowra_20191231T00_S2_optRef", "AU_Nowra_20200105T19_DSC147"],
+            
+            # 'KolymaRiver': ['KolymaRiver_20200726T01_S2_optRef', '20200721T20_DSC148'],
+            # 'Morkoka': ["Morkoka_20190913T04_S2_optRef", "Morkoka_20190907T22_DSC62"],
+            
+            # BC Wildfires
+            # 'C10784': ['C10784_20171029T19_S2_optRef', 'C10784_20171001T14_DSC86'],
+            # 'C10970': ['C10970_20170904T19_S2_optRef', 'C10970_20170907T14_DSC86'],
+            # 'C50647': ['C50647_20171003T19_S2_optRef', 'C50647_20170918T01_ASC64'],
+            # 'G80340': ['G80340_20180726T19_S2_optRef', 'G80340_20180621T01_ASC64'],
+            # 'K20637': ['K20637_20171003T19_S2_optRef', 'K20637_20170930T01_ASC64'],
+            # 'R92033': ['R92033_20180915T19_S2_optRef', 'R92033_20180824T14_DSC130'],
 
-                    # BC Wildfires Excluded
-                    # 'G41607': ['G41607_20180929T19_S2_optRef', 'G41607_20180919T14_DSC159'],
-                    # 'G82215': ['G82215_20180921T19_S2_optRef', 'G82215_20180828T14_DSC13'],
-                    # 'N21628': ['N21628_20170927T18_L8_optRef', 'N21628_20170930T13_DSC71'],
-                    # 'R11498': ['R11498_20180929T19_S2_optRef', 'R11498_20180912T02_ASC137'],
-                    # 'R21721': ['R21721_20180922T19_L8_optRef', 'R21721_20181006T14_DSC57'],
-                    # 'VA1787': ['VA1787_20180929T19_S2_optRef', 'VA1787_20180907T14_DSC159'],
+        
+            # BC Wildfires Excluded
+            # 'G41607': ['G41607_20180929T19_S2_optRef', 'G41607_20180919T14_DSC159'],
+            # 'G82215': ['G82215_20180921T19_S2_optRef', 'G82215_20180828T14_DSC13'],
+            # 'N21628': ['N21628_20170927T18_L8_optRef', 'N21628_20170930T13_DSC71'],
+            # 'R11498': ['R11498_20180929T19_S2_optRef', 'R11498_20180912T02_ASC137'],
+            # 'R21721': ['R21721_20180922T19_L8_optRef', 'R21721_20181006T14_DSC57'],
+            # 'VA1787': ['VA1787_20180929T19_S2_optRef', 'VA1787_20180907T14_DSC159'],
 
-                    # Swedish Fires
-                    # 'Fajelsjo': ['Fajelsjo_20181007T10_S2_optRef', '20180809T05_DSC168'],
-                    # 'Trangslet': ['Trangslet_20180831T10_S2_optRef', '20180809T05_DSC168'],
-                    # 'Lillhardal': ['Lillhardal_20181007T10_S2_optRef', '20180809T05_DSC168'],
+            # Swedish Fires
+            # 'Fajelsjo': ['Fajelsjo_20181007T10_S2_optRef', '20180809T05_DSC168'],
+            # 'Trangslet': ['Trangslet_20180831T10_S2_optRef', '20180809T05_DSC168'],
+            # 'Lillhardal': ['Lillhardal_20181007T10_S2_optRef', '20180809T05_DSC168'],
                    
-            }
+    }
 
 def zero_padding(arr, patchsize):
     # print("zero_padding patchsize: {}".format(patchsize))
