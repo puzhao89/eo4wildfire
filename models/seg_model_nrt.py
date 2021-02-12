@@ -234,7 +234,7 @@ class SegModel:
 
         fireKey = os.path.split(Path(self.cfg.nrt_data_folder))[-1].split("_")[0]
         if fireKey in testing_dataset.keys():
-            ref_url = Path(self.cfg.nrt_data_folder)/"A4_OptGTM"/testing_dataset[fireKey][0]+".png"
+            ref_url = Path(self.cfg.nrt_data_folder)/"A4_OptGTM"/f"{testing_dataset[fireKey][0]}.png"
             refMask = imread(ref_url) / 255
             testName = testing_dataset[fireKey][1]
 

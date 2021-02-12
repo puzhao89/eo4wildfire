@@ -34,7 +34,7 @@ def run_by_fireEvent(fireEvent="BC2018R91947"):
         weight_decay = 1e-4,
         BATCH_SIZE = 32, #32,
 
-        max_score = 0.1, # IoU
+        max_score = 0, # IoU
         max_epoch = 20,
         size_of_train = 3072, #3072,
 
