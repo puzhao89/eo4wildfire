@@ -277,6 +277,7 @@ class SegModel:
             print(f"dataName: {str(url)}")
 
             predMap = self.evaluator.inference(url, self.savePath)
+            predMap_bin = predMap.round()
 
             if (fireKey in testing_dataset.keys()) and (testName in dataName):
                 logger.info("Do Accuracy Assessment ...")
