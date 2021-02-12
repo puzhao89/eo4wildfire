@@ -32,7 +32,7 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
         ENCODER = 'resnet50', # 'mobilenet_v2'
         learning_rate = 1e-5,
         weight_decay = 1e-4,
-        BATCH_SIZE = 32, #32,
+        BATCH_SIZE = 32, # 32,
 
         max_score = 0, # IoU
         max_epoch = 20,

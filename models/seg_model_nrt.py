@@ -247,7 +247,6 @@ class SegModel:
             logger.info(f"dataName: {self.dataName}")
 
             self.dataloaders = self.train_val_loader(num=self.cfg.size_of_train)
-    
             self.optimizer = torch.optim.Adam([dict(params=self.model.parameters(), lr=self.cfg.learning_rate, weight_decay=self.cfg.weight_decay)])
             # self.history_logs = {'Train': np.zeros((len(metrics)+1, self.cfg.max_epoch)), 
                             # 'Val': np.zeros((len(metrics)+1, self.cfg.max_epoch))}

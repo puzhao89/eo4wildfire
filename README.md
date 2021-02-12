@@ -20,6 +20,11 @@ git clone https://github.com/puzhao89/eo4wildfire.git
 ----------| BC2018R92033_Progression_Data_20m <br>
 ----------| FraserIsland_Progression_Data_20m <br>
 ----------| CAL_Creek_Progression_Data_20m <br>
+++| outputs/ <br>
+------| logs/ <br>
+------| Sampled_Patches/ <br>
+------| Experiments_Fly/ <br>
+------| Experiment_Offline/ <br>
 ++| config/ <br>
 ++| datasets/ <br>
 ++| evaluation/ <br>
