@@ -153,6 +153,7 @@ class SegModel:
     def __init__(self, cfg):
         self.time_now = (datetime.now() + timedelta(hours=1)).strftime("%Y%m%dT%H%M%S")
         self.cfg = cfg
+        self.delModelFlag = True
 
         self.expmPath = Path(cfg.project_dir) / "outputs" / 'Experiments_Fly'
         # self.expmPath = Path(cfg.nrt_data_folder) / 'Experiments'
@@ -276,15 +277,16 @@ class SegModel:
             url = Path(self.cfg.nrt_data_folder) / self.cfg.input_folder / self.dataName
             print(f"dataName: {str(url)}")
 
-            predMap = self.evaluator.inference(url, self.savePath)
-            predMap_bin = predMap.round()
+            predMap = self.evaluator.inference(url, self.savePath).round()
 
             if (fireKey in testing_dataset.keys()) and (testName in dataName):
                 logger.info("Do Accuracy Assessment ...")
                 self.evaluator.compute_test_accuarcy(predMap, refMask, True, fireKey)
                 self.evaluator.compute_test_accuarcy(predMap, refMask, False, fireKey)
 
-                   
+        """ delete saved model"""
+        if self.delModelFlag and os.path.isfile(self.model_url):
+            os.system("rm {}".format(self.model_url))
          
     
     def train_one_epoch(self, epoch):

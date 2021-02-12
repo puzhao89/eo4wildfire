@@ -9,7 +9,7 @@ import os, json
 from utils.setup_logs import setup_default_logging
 logger = setup_default_logging("./outputs/logs", string='on-the-fly')
 
-def run_by_fireEvent(fireEvent="BC2018R91947"):
+def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
     project_dir = Path(os.getcwd())
     cfg = edict(
@@ -41,7 +41,7 @@ def run_by_fireEvent(fireEvent="BC2018R91947"):
         # loss
         gamma = 1, # dice
         alpha = 0.5, # focal
-        beta = 2e-5, # tv
+        beta = beta, # tv
 
         ref_mode = 'SARREF', #'SARREF', 'OptSAR', 'OptREF'
         
@@ -60,30 +60,30 @@ def run_by_fireEvent(fireEvent="BC2018R91947"):
     data_sampler()
     cfg.data_sampler = data_sampler
 
-    for ref_mode in ['SARREF', 'OptSAR']:  #'SARREF', 'OptSAR', 'OptREF'
-        cfg.ref_mode = ref_mode
+    cfg.ref_mode = ref_mode
+    pprint(cfg)
 
-        pprint(cfg)
+    """ Model Training """
+    from models.seg_model_nrt import SegModel
+    cfg.data_sampler = data_sampler
 
-        """ Model Training """
-        from models.seg_model_nrt import SegModel
-        cfg.data_sampler = data_sampler
+    seg_model = SegModel(cfg)
+    cfg.modelPath = str(seg_model.savePath)
 
-        seg_model = SegModel(cfg)
-        cfg.modelPath = str(seg_model.savePath)
+    """ Save Configuration before run """
+    cfg_file = Path(cfg.modelPath) / 'config.json'
+    with open(str(cfg_file), 'w') as fp:
+        if 'data_sampler' in cfg.keys(): del cfg['data_sampler']
+        json.dump(cfg, fp)
 
-        """ Save Configuration before run """
-        cfg_file = Path(cfg.modelPath) / 'config.json'
-        with open(str(cfg_file), 'w') as fp:
-            if 'data_sampler' in cfg.keys(): del cfg['data_sampler']
-            json.dump(cfg, fp)
-
-        seg_model.run_nrt_experiment()
+    seg_model.run_nrt_experiment()
 
 
 if __name__ == "__main__":
 
-    # for fireEvent in ["BC2018R91947", "BC2018R92033", "elephantHill"]:
-    #     run_by_fireEvent(fireEvent)
+    for fireEvent in ["elephantHill", "BC2018R92033", "BC2018R91947"]:
+        for ref_mode in ["SARREF", "OptSAR"]:
+            run_cfg(fireEvent=fireEvent, beta=0, ref_mode=ref_mode)
+            run_cfg(fireEvent=fireEvent, beta=2e-5, ref_mode=ref_mode)
 
-    run_by_fireEvent("elephantHill")
+    # run_by_fireEvent("elephantHill")
