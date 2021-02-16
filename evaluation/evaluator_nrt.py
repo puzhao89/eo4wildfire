@@ -57,6 +57,7 @@ testing_dataset = {
             'elephantHill': ['elephant_20171003T19_S2_optRef', '20170930T01_ASC64'],
             'BC2018R91947': ['R91947_20180918T19_L8_optRef', 'R91947_20180922T02_ASC108'],
             'BC2018R92033': ['R92033_20180915T19_S2_optRef', 'BC2018R92033_20180824T14_DSC130'],
+            'BC2018R12068': ['R12068_20181004T19_S2_optRef', 'R12068_20180831T14_DSC57'],
 
             # 'Carr': ["Carr_20181030T19_S2_optRef", "Carr_20181109T14_DSC115"],
             # 'Chuckegg': ['Chuckegg_20190812T18_L8_optRef', '20190812T01_ASC20'],
