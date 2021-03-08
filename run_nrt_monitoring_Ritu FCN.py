@@ -28,7 +28,7 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
         random_state = 42,
 
         # model config
-        ARCH = 'UNet', 
+        ARCH = 'FCN', 
         ENCODER = 'resnet50', # 'mobilenet_v2'
         learning_rate = 1e-5,
         weight_decay = 1e-4,
@@ -81,11 +81,11 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
 if __name__ == "__main__":
 
-    for fireEvent in ["BC2018R91947", "BC2018R12068", "BC2018G80340", "BC2018G82215", "BC2018VA1787", "BC2018R21721"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
+    for fireEvent in ["BC2018R91947", "BC2018R12068", "BC2018G80340", "BC2018G82215", "BC2018R21721", "BC2018VA1787"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
         for ref_mode in ["SARREF", "OptSAR"]:
             run_cfg(fireEvent=fireEvent, beta=2e-5, ref_mode=ref_mode)
 
-    for fireEvent in ["BC2018R91947", "BC2018R12068", "BC2018G80340", "BC2018G82215", "BC2018VA1787", "BC2018R21721"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
+    for fireEvent in ["BC2018R91947", "BC2018R12068", "BC2018G80340", "BC2018G82215", "BC2018R21721", "BC2018VA1787"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
         for ref_mode in ["SARREF", "OptSAR"]:
             run_cfg(fireEvent=fireEvent, beta=0, ref_mode=ref_mode)
 
