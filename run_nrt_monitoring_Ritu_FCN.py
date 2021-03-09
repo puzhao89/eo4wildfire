@@ -23,7 +23,7 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
         # sampling config
         patchsize = 256,
-        num_patch_per_image = 500, #500
+        num_patch_per_image = 10, #500
         train_val_split_rate = 0.7,
         random_state = 42,
 
@@ -36,7 +36,7 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
         max_score = 0, # IoU
         max_epoch = 20,
-        size_of_train = 3072, #3072,
+        size_of_train = 64, #3072,
 
         # loss
         gamma = 1, # dice
