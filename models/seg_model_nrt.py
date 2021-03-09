@@ -220,8 +220,8 @@ class SegModel:
             train_dataset = Subset(train_dataset, np.random.choice(len(train_dataset), num))
             # valid_dataset = Subset(valid_dataset, np.random.choice(len(valid_dataset), int(num/4))
 
-        train_loader = DataLoader(train_dataset, batch_size=self.cfg.BATCH_SIZE, shuffle=True, num_workers=8)
-        valid_loader = DataLoader(valid_dataset, batch_size=self.cfg.BATCH_SIZE, shuffle=False, num_workers=8)
+        train_loader = DataLoader(train_dataset, batch_size=self.cfg.BATCH_SIZE, shuffle=True, num_workers=2)
+        valid_loader = DataLoader(valid_dataset, batch_size=self.cfg.BATCH_SIZE, shuffle=False, num_workers=2)
 
         dataloaders = {'Train': train_loader, 'Val': valid_loader}
         return dataloaders
