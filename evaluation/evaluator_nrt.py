@@ -63,8 +63,16 @@ testing_dataset = {
             'BC2018G80340': ['BC2018G80340_20180726T19_S2_optRef', 'BC2018G80340_20180621T01_ASC64'],
             'BC2018R21721': ['BC2018R21721_20180922T19_L8_optRef', 'BC2018R21721_20180831T14_DSC57'],
             'BC2018G82215': ['BC2018G82215_20180921T19_S2_optRef', 'G82215_20180909T14_DSC13'],
+            
+            # Swedish Fires 
+            'SE2018Ljusdals': ['SE2018Ljusdals_polyMap', '20180802T05_DSC66'],
+            'SE2018LjusdalsV1': ['SE2018Ljusdals_polyMap', '20180802T05_DSC66'],
+            'SE2018LillasenV1': ['SE2018Lillasen_polyMap', '20180802T05_DSC66'],
+            'SE2018TrangsletV1': ['SE2018Trangslet_polyMap', '20180808T16_ASC73'],
+            'SE2018Storbrattan': ['SE2018Storbrattan_polyMap', '20180728T16_ASC175'],
 
-            'SE2018Ljusdals': ['polyMap', '20180809T05_DSC168'],
+
+
 
 
             # 'Carr': ["Carr_20181030T19_S2_optRef", "Carr_20181109T14_DSC115"],

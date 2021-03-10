@@ -29,13 +29,13 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
         # model config
         ARCH = 'UNet', 
-        ENCODER = 'resnet50', # 'mobilenet_v2'
+        ENCODER = 'resnet18', # 'mobilenet_v2'
         learning_rate = 1e-5,
         weight_decay = 1e-4,
         BATCH_SIZE = 32, # 32,
 
         max_score = 0, # IoU
-        max_epoch = 20,
+        max_epoch = 50,
         size_of_train = 3072, #3072,
 
         # loss
@@ -81,16 +81,8 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
 if __name__ == "__main__":
 
-    # for fireEvent in ["BC2018R12068", "BC2018G80340", "BC2018G82215", "BC2018VA1787", "BC2018R21721"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
-    #     for ref_mode in ["SARREF", "OptSAR"]:
-    #         run_cfg(fireEvent=fireEvent, beta=2e-5, ref_mode=ref_mode)
-
-    # for fireEvent in ["BC2018R12068", "BC2018G80340", "BC2018G82215", "BC2018VA1787", "BC2018R21721"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
-    #     for ref_mode in ["SARREF", "OptSAR"]:
-    #         run_cfg(fireEvent=fireEvent, beta=0, ref_mode=ref_mode)
-
-    for fireEvent in ["SE2018Ljusdals"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
-        for ref_mode in ["SARREF", "OptSAR"]:
+    for fireEvent in ["SE2018LjusdalsV1", "SE2018Ljusdals", "SE2018LillasenV1", "SE2018TrangsletV1", "SE2018Storbrattan"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
+        for ref_mode in ["OptSAR"]:
+            # run_cfg(fireEvent=fireEvent, beta=0, ref_mode=ref_mode)
             run_cfg(fireEvent=fireEvent, beta=2e-5, ref_mode=ref_mode)
-
-    # run_by_fireEvent("elephantHill")
+            

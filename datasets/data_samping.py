@@ -309,6 +309,7 @@ class NRT_DataSampler:
                 imsave(self.val.maskDir_SAR / f"{tifName}_{i}.png", (val[i,..., -1]*255).astype(np.uint8))
 
     def generate_training_samples(self):
+        # print(os.listdir(self.dataPath))
         for filename in sorted(os.listdir(self.dataPath)):
             if ('.tif' in filename) or ('.png' in filename):
                 print(f"\n ==> Sampling over {filename}")
