@@ -81,7 +81,7 @@ def run_cfg(fireEvent="BC2018R91947", beta=0, ref_mode="SARREF"):
 
 if __name__ == "__main__":
 
-    for fireEvent in ["SE2018LjusdalsV1", "SE2018Ljusdals", "SE2018LillasenV1", "SE2018TrangsletV1", "SE2018Storbrattan"]: #, "elephantHill", "BC2018R92033", "BC2018R91947"
+    for fireEvent in ["SE2018LjusdalsV1", "SE2018Ljusdals", "SE2018LillasenV1", "SE2018TrangsletV1", "SE2018Storbrattan"]: 
         for ref_mode in ["OptSAR"]:
             # run_cfg(fireEvent=fireEvent, beta=0, ref_mode=ref_mode)
             run_cfg(fireEvent=fireEvent, beta=2e-5, ref_mode=ref_mode)
